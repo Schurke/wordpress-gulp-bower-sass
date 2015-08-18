@@ -2,6 +2,7 @@
 
 // Load any Sass dependencies at the top of this file (e.g. if you use Bourbon or some other framework)
 // Note: `bower_components` is already in Sass's path
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Scut, a Sass utilities library: https://davidtheclark.github.io/scut/
 @import "scut/dist/scut";
@@ -13,7 +14,7 @@
 @import "library";
 
 // Normalize: make browsers render things more consistently
-@import "normalize";
+// @import "normalize";
 
 // Reset: eliminate default browser styling (optional; commented out by default)
 //@import "reset";
