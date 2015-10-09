@@ -1,0 +1,27 @@
+
+/* 
+font-family: 'Noto Serif', serif; 
+*/
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic);
+/* 
+font-family: 'Arvo', serif; 
+*/
+@import url(https://fonts.googleapis.com/css?family=Arvo);
+
+
+/*
+font-family: 'Aileron', Sans-Serif;
+font-style: italic;
+*/
+@font-face {
+    font-family: 'aileron';
+    src: url('fonts/aileron-thin-webfont.eot');
+    src: url('fonts/aileron-thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aileron-thin-webfont.woff2') format('woff2'),
+         url('fonts/aileron-thin-webfont.woff') format('woff'),
+         url('fonts/aileron-thin-webfont.ttf') format('truetype'),
+         url('fonts/aileron-thin-webfont.svg#fonts/aileronthin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

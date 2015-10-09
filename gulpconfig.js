@@ -1,11 +1,12 @@
 // ==== CONFIGURATION ==== //
 
 // Project paths
-var project     = 'voidx-bs'
+var project     = 'voidx'
   , src         = './src/'
-  , build       = './build/'
+  , build       = './build/' //'../wp-content/themes/GeorgeOnQueen/'
   , dist        = './dist/'+project+'/'
   , bower       = './bower_components/'
+  , lib         = './components/'
   , composer    = './vendor/'
 ;
 
@@ -33,11 +34,11 @@ module.exports = {
 
   images: {
     build: { // Copies images from `src` to `build`; does not optimize
-      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif)'
+      src: src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
     , dest: build
     }
   , dist: {
-      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif)', '!'+dist+'screenshot.png']
+      src: [dist+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)', '!'+dist+'screenshot.png']
     , imagemin: {
         optimizationLevel: 7
       , progressive: true
@@ -53,12 +54,14 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks to concatenate; warning: it's up to you to manage dependencies!
-      core: ['core', 'bs']
+      core: ['core', 'modules', 'bs', 'fx']
     , pg8: ['pg8', 'core']
     }
   , chunks: { // Chunks are arrays of globs matching source files that combine to provide specific functionality
       core: [src+'js/responsive-menu.js', src+'js/core.js']
-	, bs: [bower+'bootstrap-sass/assets/javascripts/bootstrap.min.js']
+    , bs: [bower+'bootstrap-sass/assets/javascripts/bootstrap.min.js']
+	, fx: [bower+'wowjs/dist/wow.min.js']
+    , modules: [src+'js/N_VideoPlayer.js']
     , pg8: [bower+'html5-history-api/history.js', bower+'spin.js/spin.js', bower+'spin.js/jquery.spin.js', bower+'wp-ajax-page-loader/wp-ajax-page-loader.js', src+'js/page-loader.js']
     }
   , dest: build+'js/' // Where the scripts end up

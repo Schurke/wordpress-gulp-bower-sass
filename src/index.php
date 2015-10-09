@@ -1,48 +1,47 @@
-<?php get_header(); ?>
-<div class="container">
-  <div class="row">
-    <!-- main content -->
-    <div id="wrap-content" class="wrap-content col-sm-8">
-      <div id="content" class="site-content">
-        <section id="primary" class="content-area">
-          <main id="main" class="site-main" role="main">
-          <?php if ( have_posts() ) {
-            while ( have_posts() ) : the_post(); ?>
-              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-                <header class="entry-header">
-                  <h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-                </header>
-                <footer class="entry-meta">
-                  <?php printf( __( 'Posted on %1$s by %2$s. ', 'voidx' ), get_the_date(), get_the_author() ); ?>
-                  <?php _e( 'Categories: ', 'voidx' ); the_category( ', ' ); echo '. '; ?>
-                </footer>
-                <div class="entry-content">
-                  <?php the_content(); ?>
-                  <?php wp_link_pages(); ?>
-                </div>
-              </article>
-            <?php endwhile;
-          } else { ?>
-            <article id="post-0" class="post no-results not-found">
-              <header class="entry-header">
-                <h1><?php _e( 'Not found', 'voidx' ); ?></h1>
-              </header>
-              <div class="entry-content">
-                <p><?php _e( 'Sorry, but your request could not be completed.', 'voidx' ); ?></p>
-                <?php get_search_form(); ?>
-              </div>
-            </article>
-          <?php } ?>
-          </main>
-          <?php voidx_post_navigation(); ?>
-        </section>
-      </div>
-    </div>
-    <!-- sidebar --> 
-    <div id="wrap-sidebar" class="wrap-sidebar col-sm-4">
-      <?php get_sidebar(); ?>
-    </div>
+<?php 
 
- </div>
-</div>
-<?php get_footer(); ?>
+// TODO move this to utils
+// get template
+if (!$template) $template = get_page_template_slug();
+// get only last part
+if ($template && strpos($template,'/') !== false){
+	$templateArr = explode('/', $template);
+	$template = $templateArr[count($templateArr)-1];
+	// strip off .php
+	$templateArr = explode('.php', $template);
+	$template = $templateArr[0];
+}
+if(isset($_GET["template"])){
+	$template = $_GET["template"];
+}
+// if no template set
+if (!$template || $template == 'index') $template = 'default';
+
+// ooutput header
+get_header(); 
+
+if($template!="stripped"){
+	//echo $template;
+	
+
+	// output container top
+	get_template_part( 'partials/wrapper', 'content-top' ); 	
+
+}
+
+if($template!="stripped"){
+	// get content
+	get_template_part( 'partials/content', $template ); 
+} else{
+	get_template_part( 'partials/content', 'default' ); 
+}
+
+if($template!="stripped"){
+	// output container bottom
+	get_template_part( 'partials/wrapper', 'content-bottom' ); 	
+
+	// get footer
+	get_footer();
+}
+
+?>

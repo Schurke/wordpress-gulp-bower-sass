@@ -34,6 +34,11 @@
     "html5-history-api": "^4.2.1",
     "spin.js": "^2.3.1",
     "wp-ajax-page-loader": "^0.1.1",
-	"bootstrap-sass": "~3.3.4"
+    "bootstrap-sass": "~3.3.4"
+  },
+  "dependencies": {
+    "compass-mixins": "~1.0.2",
+    "wowjs": "~1.1.2",
+    "animate-css": "~3.4.0"
   }
 }

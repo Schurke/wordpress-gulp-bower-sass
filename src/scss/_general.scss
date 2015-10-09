@@ -1,40 +1,50 @@
-// ==== GENERAL ==== //
+/* ==== GENERAL ==== */
 
-html {
-  font-size: 18px;
+body{
+	/* make space for the fixed nav bar */
+	overflow-x:hidden;
+	padding-top:50px;
+	@media (min-width: 768px){
+		padding-top:50px;
+		&.admin-bar{
+			.navbar-fixed-top{
+				margin-top:32px;
+			}
+		}
+	}
 }
-body {
-  background: color(body-background);
-  color: color(text);
-  font-family: "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", "Liberation Sans", Arimo, sans-serif;
-  line-height: 1.44444;
+
+/* Image formatting */
+
+img{
+	max-width: 100%;
+	height:auto;
+	&.alignleft{
+		float:left;
+	}
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  line-height: 1.22222;
+
+.entry-content{
+	img{
+		&.alignleft{
+			margin:7px 10px 10px 0px;
+		}
+	}
 }
-a {
-  border: 0;
-  color: inherit;
-  text-decoration: none;
-  transition: color .8s ease-out;
-  .wrap-content &,
-  .menu-inline & {
-    color: color(link);
-  }
-  .wrap-sidebar & {
-    color: color(link-muted);
-  }
+
+.fluid-width-image{
+	background-position: center;
+	background-size: cover;
+	height:345px;
+	position:relative;
+	&.parallax-background{
+		background-attachment:fixed;
+	}
 }
-figure {
-  margin: 0;
-}
-img {
-  height: auto;
-  max-width: 100%;
+
+
+/* Breadcrumb defaults */
+
+.breadcrumb > li + li:before {
+    content: "/";
 }

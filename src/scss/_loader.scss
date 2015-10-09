@@ -2,6 +2,9 @@
 
 // Load any Sass dependencies at the top of this file (e.g. if you use Bourbon or some other framework)
 // Note: `bower_components` is already in Sass's path
+
+// include bootstrap
+$icon-font-path: "fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Scut, a Sass utilities library: https://davidtheclark.github.io/scut/

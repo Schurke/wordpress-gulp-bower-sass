@@ -9,35 +9,39 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<?php
+	$templateOverride = "";
+	if (isset($_GET["template"])) $templateOverride=$_GET["template"];
+?>
+<body <?php body_class($templateOverride); ?>>
   <div id="page" class="hfeed site">
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<?php echo home_url(); ?>">
-            <?php bloginfo('name'); ?>
-          </a>
-        </div>
-            <?php
-                wp_nav_menu( array(
-                    'menu'              => 'primary',
-                    'theme_location'    => 'primary',
-                    'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'bs-example-navbar-collapse-1',
-                    'menu_class'        => 'nav navbar-nav',
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                    'walker'            => new wp_bootstrap_navwalker())
-                );
-            ?>
-        </div>
-    </nav>
-    <div id="wrap-main" class="wrap-main">
+	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+		
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#voidx-header-nav">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><?php bloginfo('name'); ?></a>
+			</div>
+				<?php
+					wp_nav_menu( array(
+						'menu'              => 'header',
+						'theme_location'    => 'header',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'voidx-header-nav',
+						'menu_class'        => 'nav navbar-nav',
+						'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+						'walker'            => new wp_bootstrap_navwalker())
+					);
+				?>
+		</div>
+		
+	</nav>
+	<div id="wrap-main" class="wrap-main">
