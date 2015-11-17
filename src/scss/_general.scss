@@ -3,6 +3,9 @@
 body{
 	/* make space for the fixed nav bar */
 	overflow-x:hidden;
+	
+}
+body.fixed-navbar{
 	padding-top:50px;
 	@media (min-width: 768px){
 		padding-top:50px;

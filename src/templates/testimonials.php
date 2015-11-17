@@ -1,8 +1,7 @@
 <?php
 /*
-Template Name: Press Template
+Template Name: Testimonials Template
 */
 
 ?>
-
 <?php require get_template_directory().'/index.php'; ?>

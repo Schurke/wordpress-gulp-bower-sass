@@ -1,5 +1,5 @@
 /*!
-Theme Name: Bootstrap 3 WP
+Theme Name: Ingenia Polymers
 Author: Craig Harwood
 Description: Bootstrap 3 version of the VoidX Starter theme by synapticism
 Text Domain:
@@ -15,29 +15,6 @@ Domain Path: /languages/
 @import "../../bower_components/animate-css/animate";
 @import "modules";
 @import "general";
-//@import "layout";
-//@import "menus";
-//@import "navigation";
-//@import "sidebar";
-
-
-
-/* -----------------------------------
-	GEORGE SKIN STYLES -- Here due to an issue with libsass
------------------------------------- */
-
-
-
-/* Colours */
-$brand_color_white: #fff;
-$brand_color_primary: #8E9DA2;
-$brand_color_primary_accent: #70868C;
-$brand_color_secondary: #E37D46;
-/* Fonts */
-$header_font:'Aileron', Sans-Serif;
-$body_font:'Noto Serif', serif; 
-$alt_font:'Arvo', serif; 
-/* Effects */
-$text_shadow:1px 1px 2px rgba(150, 150, 150, 0.5);
-
+@import "ingenia";
+@import "ingenia_ar";
 

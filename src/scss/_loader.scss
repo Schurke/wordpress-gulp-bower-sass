@@ -11,10 +11,10 @@ $icon-font-path: "fonts/bootstrap/";
 @import "scut/dist/scut";
 
 // Configuration variables
-@import "config";
+// @import "config";
 
 // Library: mixins, functions, etc.
-@import "library";
+// @import "library";
 
 // Normalize: make browsers render things more consistently
 // @import "normalize";
@@ -23,4 +23,4 @@ $icon-font-path: "fonts/bootstrap/";
 //@import "reset";
 
 // Helpers
-@import "helpers";
+// @import "helpers";

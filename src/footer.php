@@ -26,7 +26,7 @@
 						</div>
 					</div>
 					<div>
-						<p>Copyright &copy; <?php echo date("Y"); ?> George Restaurant. All Rights Reserved. 111C Queen St East, Toronto T. 647-496-8275 F. 416-368-6093</p>
+						<p><?php echo get_option( 'voidx_theme_options_copyright' ); ?></p>
 					</div>
 					
 

@@ -1,15 +1,15 @@
 <div class="container">
 	<header class="entry-header">
-	<?php 
-		// get template header
-		get_template_part( 'partials/header', 'page'); 
-	?>
+		<?php 
+			// get template header
+			get_template_part( 'partials/header', 'page'); 
+		?>
 	</header>
 </div>
 
 <?php 
 	// sidebar layout configuration
-	$sidebar_id = 'sidebar-post';
+	$sidebar_id = 'sidebar-page';
 	$active_sidebar = is_active_sidebar( $sidebar_id );
 	// check layout
 	$full_cols = 12;
@@ -30,33 +30,17 @@
 			<?php if ( have_posts() ) {
 				while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
-
+						
 						<div class="entry-content">
-							<div>
-								<?php 
-									// if single post/page show content. Otherwise, show excerpt
-									if (is_single()){
-										// nothing
-									} else {
-										the_post_thumbnail( 'large' );
-									}
-								?>
-							</div>
+							<!-- title -->
 							<h1><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+							<!-- content -->
 							<div>
-								<?php 
-									// if single post/page show content. Otherwise, show excerpt
-									if (is_single()){
-										the_content(); 
-									} else {
-										the_excerpt();
-									}
-								?>
+								<?php the_content(); ?>
 								<?php wp_link_pages(); ?>
 							</div>
 							
 						</div>
-					
 					</article>
 				<?php endwhile;
 			} else { ?>
@@ -66,29 +50,24 @@
 					get_template_part( 'partials/partial', 'not-found' ); 	
 				?>
 
+			<?php } ?>	
 
-			<?php } ?>
 
-		</div>
-		<!-- start sidebar -->
-		<?php if ($active_sidebar){ ?>
 
-			<div id="wrap-sidebar" class="wrap-sidebar col-md-<?php echo $full_cols-$content_cols; ?>">
-				<!-- output sidebar -->
-				<?php 
-					if ( $active_sidebar ) {
-						// output sidebar
-						dynamic_sidebar( $sidebar_id  );
-					}
-				?>
-				
-			</div>
-
-		<?php } ?>	
-</div>
-<div class="container">
-	<div class="page-nav">
-		<!-- ?php echo paginate_links(); ? -->
-		<?php voidx_post_navigation(); ?>
 	</div>
+	<!-- start sidebar -->
+	<?php if ($active_sidebar){ ?>
+
+		<div id="wrap-sidebar" class="wrap-sidebar col-md-<?php echo $full_cols-$content_cols; ?>">
+			<!-- output sidebar -->
+			<?php 
+				if ( $active_sidebar ) {
+					// output sidebar
+					dynamic_sidebar( $sidebar_id  );
+				}
+			?>
+			
+		</div>
+
+	<?php } ?>	
 </div>

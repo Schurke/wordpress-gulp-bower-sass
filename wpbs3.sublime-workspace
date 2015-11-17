@@ -495,6 +495,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/scss/style.scss",
+			"settings":
+			{
+				"buffer_size": 920,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gulpconfig.js",
+			"settings":
+			{
+				"buffer_size": 5100,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/header.php",
+			"settings":
+			{
+				"buffer_size": 1743,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/partials/content-blog.php",
+			"settings":
+			{
+				"buffer_size": 3698,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -557,10 +589,15 @@
 	},
 	"expanded_folders":
 	[
-		"/D/LAB/web/sc/wpbs"
+		"/D/LAB/web/sc/wpbs",
+		"/D/LAB/web/sc/wpbs/src",
+		"/D/LAB/web/sc/wpbs/src/partials",
+		"/D/LAB/web/sc/wpbs/src/scss",
+		"/D/LAB/web/sc/wpbs/src/templates"
 	],
 	"file_history":
 	[
+		"/D/LAB/web/sc/wpbs/src/scss/_meta.scss",
 		"/D/LAB/apps/sl/fangbone/Assets/Scripts/Framework/UIWindowProps.cs",
 		"/D/LAB/apps/sl/fangbone/Assets/Scripts/Framework/MainNavController.cs",
 		"/D/LAB/apps/sl/fangbone/Assets/Scripts/Builder/TabControl.cs",
@@ -687,12 +724,11 @@
 		"/C/Users/Craig/AppData/Roaming/Sublime Text 3/Packages/User/C#.sublime-settings",
 		"/D/LABORATORY/apps/sl/fangbone/fangbone.sublime-project",
 		"/D/LABORATORY/web/mt/bu/wp-content/plugins/wc-sdr-integration/wc-sdr-credentials.php",
-		"/D/LABORATORY/web/mt/bu/wp-content/plugins/woocommerce/includes/class-wc-product-variable.php",
-		"/D/LABORATORY/web/mt/bu/wp-content/plugins/woocommerce/templates/content-single-product.php"
+		"/D/LABORATORY/web/mt/bu/wp-content/plugins/woocommerce/includes/class-wc-product-variable.php"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 36.0
 	},
 	"find_in_files":
 	{
@@ -896,8 +932,126 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/scss/style.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								863,
+								863
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "gulpconfig.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								484
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/partials/content-blog.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3032,
+								3032
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 869.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
