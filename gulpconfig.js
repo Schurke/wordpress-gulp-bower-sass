@@ -47,6 +47,17 @@ module.exports = {
     , dest: dist
     }
   },
+  
+  fonts: {
+    build: { // Copies fonts from `src` to `build`
+      src: src+'fonts/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
+    , dest: build
+    }
+  , dist: {
+      src: dist+'fonts/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
+    , dest: dist
+    }
+  },
 
   livereload: {
     port: 35729
@@ -54,7 +65,7 @@ module.exports = {
 
   scripts: {
     bundles: { // Bundles are defined by a name and an array of chunks to concatenate; warning: it's up to you to manage dependencies!
-      core: ['core', 'modules', 'bs', 'fx']
+      core: [ 'bs', 'fx', 'modules', 'core']
     , pg8: ['pg8', 'core']
     }
   , chunks: { // Chunks are arrays of globs matching source files that combine to provide specific functionality
@@ -89,7 +100,7 @@ module.exports = {
   , compiler: 'libsass' // Choose a Sass compiler: 'libsass' or 'ruby-sass'
   , autoprefixer: { browsers: ['> 3%', 'last 2 versions', 'ie 9', 'ios 6', 'android 4'] }
   , rename: { suffix: '.min' }
-  , minify: { keepSpecialComments: 1, roundingPrecision: 3 }
+  , minify: { keepSpecialComments: 1, roundingPrecision: 3, processImport: false }
   , rubySass: { // Requires the Ruby implementation of Sass; run `gem install sass` if you use this; Compass is not included by default
       loadPath: bower // Adds the `bower_components` directory to the load path so you can @import directly
     , precision: 6
@@ -128,7 +139,8 @@ module.exports = {
     src: {
       styles:       src+'scss/**/*.scss'
     , scripts:      [src+'js/**/*.js', bower+'**/*.js']
-    , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif)'
+//	, fonts:        src+'fonts/*(*.eot|*.svg|*.ttf|*.woff|*.woff2)'
+    , images:       src+'**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)'
     , theme:        src+'**/*.php'
     , livereload:   [build+'**/*']
     }

@@ -6,8 +6,8 @@ var gulp = require('gulp');
 gulp.task('default', ['watch']);
 
 // Build a working copy of the theme
-gulp.task('build', ['images', 'scripts', 'styles', 'theme']);
+gulp.task('build', ['images', 'scripts', 'styles', 'fonts', 'theme']);
 
 // Dist task chain: wipe -> build -> clean -> copy -> images/styles
 // NOTE: this is a resource-intensive task!
-gulp.task('dist', ['images-dist', 'styles-dist']);
+gulp.task('dist', ['images-dist', 'styles-dist', 'fonts-dist']);
