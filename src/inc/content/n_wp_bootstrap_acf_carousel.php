@@ -49,13 +49,11 @@ function n_wp_bootstrap_acf_carousel($rows = null, $id = "myCarousel", $class = 
 			<div class="carousel-image" style="background-image:url('.$image.');" ></div>
 			<div class="container"><div class="carousel-caption">';
 			// only output body if present
-			if ($body) {
-				if ($title) $slides .= '<h1>'.$title.'</h1>';
-			}
+			// only title body if present
+			if ($title) $slides .= '<h1>'.$title.'</h1>';
 			// only output body if present
-			if ($body) {
-				if ($body) $slides .= '<p>'.$body.'</p>';   
-			}
+			if ($body) $slides .= '<p>'.$body.'</p>';   
+			
 			// only output button if present
 			if ($readMoreLabel && $readMoreLink){
 				$slides .= '<p><a class="btn btn-primary" href="'.$readMoreLink.'" role="button">'.$readMoreLabel.'</a></p>';  
